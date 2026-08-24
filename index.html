@@ -8,10 +8,11 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+
 <header class="topbar">
   <div class="brand">
     <span class="brand-title">Digging in the Data</span>
-    <span class="brand-subtitle">What kind of growing season was 2024?</span>
+    <span class="brand-subtitle">Weather tells us what happened. Climate gives us context.</span>
   </div>
   <div class="step-label" id="step-label">Start here</div>
 </header>
@@ -23,17 +24,17 @@
       <div class="rain-doodle">☂</div>
       <div class="thermometer-doodle">↟</div>
       <div class="scribble-card">
-        <span class="tiny-label">Corvallis · 2024</span>
-        <strong>What story is hiding in the numbers?</strong>
+        <span class="tiny-label">CORVALLIS · APR–SEP 2024</span>
+        <strong>One growing season. Two ways of looking at it.</strong>
         <span class="scribble-line"></span><span class="scribble-line short"></span>
       </div>
     </div>
     <div class="intro-copy">
       <p class="eyebrow">A short data exploration</p>
-      <h1 id="intro-heading">What kind of growing season was 2024?</h1>
-      <p class="big-copy">A seasonal average gives us one answer. The details can tell a more interesting story.</p>
-      <p>You’ll explore the same weather record in a few different ways: isolate patterns, make a prediction, reveal the details, and then build a description supported by the data.</p>
-      <p class="source-note"><strong>Data:</strong> Corvallis State University weather station, Oregon. April 1–September 30, 2024, compared with 1991–2020 climate normals.</p>
+      <h1 id="intro-heading">What makes weather different from climate?</h1>
+      <p class="big-copy">We can use the same growing season to see the difference.</p>
+      <p>First, you’ll look at what actually happened in Corvallis in 2024. Then you’ll add the long-term record to put that year in context.</p>
+      <p class="source-note"><strong>Data:</strong> Corvallis State University weather station, Oregon. Growing season: April 1–September 30, 2024. Climate reference: 1991–2020 normals.</p>
       <button class="primary begin" type="button">Start digging</button>
     </div>
   </section>
@@ -41,120 +42,132 @@
   <section class="screen" data-screen="1" aria-labelledby="weather-heading">
     <div class="wide-page">
       <div class="page-heading">
-        <p class="eyebrow">First look</p>
-        <h1 id="weather-heading">Pull the layers apart</h1>
-        <p>Temperature and precipitation share one timeline, but they tell different parts of the story. Turn each layer on and off and see what becomes easier to notice.</p>
+        <p class="eyebrow">Step 1 · What happened?</p>
+        <h1 id="weather-heading">Meet the 2024 weather</h1>
+        <p>This graph shows daily maximum temperature and precipitation during one growing season. Use the buttons to look at either part of the record more closely.</p>
       </div>
+
       <div class="data-card navy-top">
         <div class="toggle-row" aria-label="Choose data layers">
           <label class="toggle-pill"><input id="show-temperature" type="checkbox" checked><span>Temperature</span></label>
           <label class="toggle-pill"><input id="show-precipitation" type="checkbox" checked><span>Precipitation</span></label>
         </div>
-        <div id="weather-chart" class="chart" role="img" aria-label="Daily maximum temperature and precipitation for Corvallis from April through September 2024"></div>
-        <div class="notice" id="layer-notice" aria-live="polite">Try viewing each layer by itself before moving on.</div>
+        <div id="weather-chart" class="chart" role="img" aria-label="Daily maximum temperature and precipitation in Corvallis from April through September 2024"></div>
         <button id="toggle-daily-table" class="text-button" type="button" aria-expanded="false" aria-controls="daily-table-wrap">View accessible daily data table</button>
         <div id="daily-table-wrap" hidden class="table-scroll">
-          <table><caption>Daily Corvallis weather observations</caption><thead><tr><th scope="col">Date</th><th scope="col">High °F</th><th scope="col">Precipitation (in)</th></tr></thead><tbody id="daily-table-body"></tbody></table>
+          <table><caption>Daily Corvallis weather observations, April through September 2024</caption>
+            <thead><tr><th scope="col">Date</th><th scope="col">High °F</th><th scope="col">Precipitation (in)</th></tr></thead>
+            <tbody id="daily-table-body"></tbody>
+          </table>
         </div>
       </div>
-      <div class="discovery-strip"><strong>Notice, don’t diagnose.</strong> At this point, your job is simply to describe patterns in the weather record.</div>
-    </div>
-  </section>
 
-  <section class="screen" data-screen="2" aria-labelledby="temperature-heading">
-    <div class="wide-page">
-      <div class="page-heading">
-        <p class="eyebrow">Zoom in</p>
-        <h1 id="temperature-heading">What can an average hide?</h1>
-      </div>
-      <div class="prediction-layout">
-        <section class="prediction-card" aria-labelledby="temp-predict-heading">
-          <span class="stamp">Predict</span>
-          <h2 id="temp-predict-heading">For June–August, the average daily high was <strong>1.9°F warmer than normal</strong>. Does that mean each summer month was about 2°F warmer than normal?</h2>
-          <div class="choice-row" role="group" aria-label="Temperature prediction">
-            <button type="button" class="choice-button temp-prediction" data-value="yes">Yes</button>
-            <button type="button" class="choice-button temp-prediction" data-value="no">No</button>
-            <button type="button" class="choice-button temp-prediction" data-value="unsure">Not sure</button>
-          </div>
-          <p class="small-muted">Make your best prediction. This isn’t graded.</p>
-        </section>
-        <section class="reveal-card" id="temp-reveal" aria-live="polite">
-          <div class="covered" id="temp-covered">
-            <span class="magnify" aria-hidden="true">⌕</span>
-            <strong>Make a prediction to reveal the months.</strong>
-          </div>
-          <div class="revealed" id="temp-revealed" hidden>
-            <span class="stamp alt">Reveal</span>
-            <h2>The months tell a less uniform story.</h2>
-            <div class="month-cards">
-              <div><span>June</span><strong>+0.9°F</strong></div>
-              <div class="standout"><span>July</span><strong>+5.2°F</strong></div>
-              <div><span>August</span><strong>−0.5°F</strong></div>
-            </div>
-            <p class="takeaway"><strong>Takeaway:</strong> An average summarizes a period, but it can hide important variation within that period.</p>
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
-
-  <section class="screen" data-screen="3" aria-labelledby="rain-heading">
-    <div class="wide-page">
-      <div class="page-heading">
-        <p class="eyebrow">Look beneath the total</p>
-        <h1 id="rain-heading">When did the rain actually fall?</h1>
-        <p>Summer precipitation totaled <strong>0.36 inches above normal</strong>. Before you look at the daily record, what might that total look like across the summer?</p>
-      </div>
-      <div class="rain-predictions" role="group" aria-label="Choose the rainfall pattern you expect">
-        <button class="rain-choice" type="button" data-value="even"><span class="pattern-icon even-pattern" aria-hidden="true"></span><strong>Spread fairly evenly</strong><span>Small amounts appearing regularly</span></button>
-        <button class="rain-choice" type="button" data-value="events"><span class="pattern-icon event-pattern" aria-hidden="true"></span><strong>Clustered in events</strong><span>Rainy periods separated by many dry days</span></button>
-        <button class="rain-choice" type="button" data-value="frequent"><span class="pattern-icon frequent-pattern" aria-hidden="true"></span><strong>Frequent throughout</strong><span>Rain showing up on most days</span></button>
-      </div>
-      <section class="data-card teal-top rain-reveal" id="rain-reveal" hidden aria-live="polite">
-        <div class="reveal-heading"><span class="stamp alt">Reveal</span><h2>Here is the daily pattern.</h2></div>
-        <div id="rain-chart" class="mini-chart" role="img" aria-label="Daily precipitation bars for June through August 2024 showing rainfall concentrated in separated events"></div>
-        <p class="takeaway"><strong>Takeaway:</strong> A seasonal total tells us how much precipitation fell. It does not tell us when it fell or how evenly it was distributed.</p>
+      <section class="question-card" aria-labelledby="q1-heading">
+        <span class="stamp">Your turn</span>
+        <h2 id="q1-heading">Why is this graph showing <em>weather</em>, not climate?</h2>
+        <div class="answer-stack" data-question="q1">
+          <button type="button" class="answer" data-correct="false">Because weather only includes temperature and precipitation.</button>
+          <button type="button" class="answer" data-correct="true">Because it shows conditions that occurred during one particular year.</button>
+          <button type="button" class="answer" data-correct="false">Because anything covering less than a full year is weather.</button>
+        </div>
+        <div class="feedback" id="q1-feedback" aria-live="polite"></div>
       </section>
     </div>
   </section>
 
-  <section class="screen" data-screen="4" aria-labelledby="story-heading">
-    <div class="wide-page story-page">
+  <section class="screen" data-screen="2" aria-labelledby="climate-heading">
+    <div class="wide-page">
       <div class="page-heading">
-        <p class="eyebrow">Put it together</p>
-        <h1 id="story-heading">Build the 2024 weather story</h1>
-        <p>Select every evidence card that is supported by the data. Cards that fit will be added to your field note.</p>
+        <p class="eyebrow">Step 2 · What is typical?</p>
+        <h1 id="climate-heading">Now add climate</h1>
+        <p>The 2024 record tells us what happened. To know whether those conditions were typical or unusual, we need a longer view.</p>
       </div>
-      <div class="story-layout">
-        <section class="evidence-bank" aria-label="Evidence cards">
-          <button class="evidence-chip" type="button" data-correct="true" data-text="The April–September growing season was warmer than normal.">Growing season was warmer</button>
-          <button class="evidence-chip" type="button" data-correct="true" data-text="The April–September growing season was drier than normal overall.">Growing season was drier</button>
-          <button class="evidence-chip" type="button" data-correct="true" data-text="Summer was warmer than normal overall.">Summer was warmer</button>
-          <button class="evidence-chip" type="button" data-correct="true" data-text="Summer received slightly more total precipitation than normal.">Summer was slightly wetter</button>
-          <button class="evidence-chip" type="button" data-correct="true" data-text="Temperature departures varied substantially from month to month.">Monthly temperatures varied</button>
-          <button class="evidence-chip" type="button" data-correct="true" data-text="Summer rainfall was unevenly distributed through time.">Rainfall timing varied</button>
-          <button class="evidence-chip" type="button" data-correct="false">Every summer month was warmer</button>
-          <button class="evidence-chip" type="button" data-correct="false">Rain fell evenly through summer</button>
+
+      <div class="comparison-board">
+        <section class="comparison-card weather-card">
+          <p class="tiny-label">2024 WEATHER</p>
+          <h2>One growing season</h2>
+          <div class="metric"><span>Average daily high</span><strong>76.0°F</strong></div>
+          <div class="metric"><span>Total precipitation</span><strong>8.11 in</strong></div>
+          <p>These measurements describe what happened from April through September 2024.</p>
         </section>
-        <aside class="field-note" aria-labelledby="field-note-heading">
-          <div class="paperclip" aria-hidden="true"></div>
-          <p class="tiny-label">FIELD NOTE · CORVALLIS 2024</p>
-          <h2 id="field-note-heading">Evidence I can support</h2>
-          <ul id="story-list"><li class="placeholder">Choose evidence cards to build the note.</li></ul>
-          <p id="story-status" class="story-status" aria-live="polite"></p>
-          <button id="check-story" class="primary" type="button">Check my weather story</button>
-        </aside>
+        <div class="versus" aria-hidden="true">+</div>
+        <section class="comparison-card climate-card">
+          <p class="tiny-label">CLIMATE</p>
+          <h2>30-year normal</h2>
+          <div class="metric"><span>Average daily high</span><strong>74.9°F</strong></div>
+          <div class="metric"><span>Total precipitation</span><strong>8.90 in</strong></div>
+          <p>These 1991–2020 normals describe what is typical over many years.</p>
+        </section>
       </div>
+
+      <section class="question-card" aria-labelledby="q2-heading">
+        <span class="stamp">Your turn</span>
+        <h2 id="q2-heading">What does the climate information help us understand?</h2>
+        <div class="answer-stack" data-question="q2">
+          <button type="button" class="answer" data-correct="true">Whether the weather in 2024 was warmer, cooler, wetter, or drier than what is typical.</button>
+          <button type="button" class="answer" data-correct="false">Exactly what the weather will be next growing season.</button>
+          <button type="button" class="answer" data-correct="false">How garden plants responded to the 2024 weather.</button>
+        </div>
+        <div class="feedback" id="q2-feedback" aria-live="polite"></div>
+      </section>
     </div>
   </section>
 
-  <section class="screen completion-screen" data-screen="5" aria-labelledby="complete-heading">
+  <section class="screen" data-screen="3" aria-labelledby="context-heading">
+    <div class="wide-page">
+      <div class="page-heading">
+        <p class="eyebrow">Step 3 · Put weather in context</p>
+        <h1 id="context-heading">What do we learn by comparing them?</h1>
+        <p>Now the numbers can tell us more than what happened. They can tell us how 2024 compared with the long-term pattern.</p>
+      </div>
+
+      <div class="snapshot-card">
+        <div class="snapshot-title">
+          <span class="tiny-label">CORVALLIS · APRIL–SEPTEMBER</span>
+          <h2>2024 growing season snapshot</h2>
+        </div>
+        <div class="departure-grid">
+          <div class="departure">
+            <span class="departure-icon" aria-hidden="true">↟</span>
+            <span>Temperature</span>
+            <strong>+1.1°F</strong>
+            <small>warmer than normal</small>
+          </div>
+          <div class="departure">
+            <span class="departure-icon" aria-hidden="true">☂</span>
+            <span>Precipitation</span>
+            <strong>−0.79 in</strong>
+            <small>drier than normal</small>
+          </div>
+        </div>
+        <p class="snapshot-note"><strong>Where do these comparisons come from?</strong> The 2024 measurements are compared with the 1991–2020 climate normals for the same April–September period.</p>
+      </div>
+
+      <section class="question-card" aria-labelledby="q3-heading">
+        <span class="stamp">Put it together</span>
+        <h2 id="q3-heading">Which statement best explains the relationship between weather and climate?</h2>
+        <div class="answer-stack" data-question="q3">
+          <button type="button" class="answer" data-correct="false">Weather is daily, while climate is anything measured over a whole season.</button>
+          <button type="button" class="answer" data-correct="true">Weather tells us what happened during a particular period; climate describes longer-term patterns that help us put that weather in context.</button>
+          <button type="button" class="answer" data-correct="false">Weather and climate are two names for the same measurements.</button>
+        </div>
+        <div class="feedback" id="q3-feedback" aria-live="polite"></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="screen completion-screen" data-screen="4" aria-labelledby="complete-heading">
     <div class="complete-card">
       <div class="complete-doodle" aria-hidden="true">✦</div>
-      <p class="eyebrow">You found the story</p>
-      <h1 id="complete-heading">The summary and the details both matter.</h1>
-      <p>The 2024 growing season was warmer and drier than normal overall. Summer was warmer and slightly wetter overall, but monthly temperatures and the timing of rainfall varied within the season.</p>
-      <div class="boundary-note"><strong>What the data tell us:</strong> the conditions that occurred.<br><strong>A question for later:</strong> what conditions like these can mean for garden plants.</div>
+      <p class="eyebrow">You dug into the difference</p>
+      <h1 id="complete-heading">Same place. Different kinds of information.</h1>
+      <div class="final-pair">
+        <div><span class="final-label">WEATHER</span><strong>What happened?</strong><p>In the 2024 growing season, we recorded daily temperature and precipitation.</p></div>
+        <div><span class="final-label">CLIMATE</span><strong>What is typical?</strong><p>The 1991–2020 record gives us a long-term pattern for comparison.</p></div>
+      </div>
+      <p class="final-takeaway"><strong>Put them together:</strong> 2024 was 1.1°F warmer and received 0.79 inches less precipitation than the long-term normal for the April–September growing season.</p>
+      <p class="bridge-note">One year of weather can be unusual without telling us that the climate itself has changed. To explore climate change, we need to look across many years.</p>
       <button class="secondary restart" type="button">Explore again</button>
     </div>
   </section>
@@ -162,9 +175,10 @@
 
 <nav class="bottom-nav" aria-label="Activity navigation">
   <button id="previous" class="nav-button" type="button">← Back</button>
-  <ol class="steps" aria-label="Progress"><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ol>
+  <ol class="steps" aria-label="Progress"><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li></ol>
   <button id="next" class="nav-button next-button" type="button" disabled>Next →</button>
 </nav>
+
 <script src="weather-data.js"></script>
 <script src="app.js"></script>
 </body>

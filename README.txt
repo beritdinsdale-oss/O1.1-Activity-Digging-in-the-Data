@@ -1,25 +1,16 @@
-Digging in the Data — redesigned activity
+Digging in the Data — Module 1
+Accessible, self-contained HTML activity.
 
-Purpose
-Learners explore 2024 Corvallis weather data without making claims about plant impacts. The interaction follows a prediction → reveal → build-the-story sequence.
+Learning focus:
+- Weather describes conditions that occurred during a particular period.
+- Climate describes longer-term patterns and provides context for weather.
+- The activity uses one consistent period: Corvallis, April–September 2024.
+- 2024 growing-season comparison: +1.1°F average daily high departure and -0.79 inches precipitation departure versus 1991–2020 normals.
 
-Files
-- index.html
-- styles.css
-- app.js
-- weather-data.js
+Files:
+index.html
+styles.css
+app.js
+weather-data.js
 
-Data
-Corvallis State University weather station, April 1–September 30, 2024.
-Climate comparisons use 1991–2020 normals retained from the previous activity package.
-
-Accessibility
-- Keyboard-operable buttons and controls
-- Visible focus styles
-- Accessible daily data table
-- Text takeaways accompanying visual graphs
-- No interaction depends on color alone
-- Reduced-motion preference respected
-
-Hosting
-Upload all files at the repository root for GitHub Pages. Open index.html for local testing.
+No live data connection is required.
