@@ -75,99 +75,139 @@
     </div>
   </section>
 
-  <section class="screen" data-screen="2" aria-labelledby="climate-heading">
+  <section class="screen" data-screen="2" aria-labelledby="temp-heading">
     <div class="wide-page">
       <div class="page-heading">
-        <p class="eyebrow">Step 2 · What is typical?</p>
-        <h1 id="climate-heading">Now add climate</h1>
-        <p>The 2024 record tells us what happened. To know whether those conditions were typical or unusual, we need a longer view.</p>
+        <p class="eyebrow">Step 2 · Add climate context</p>
+        <h1 id="temp-heading">Was 2024 warmer or cooler than usual?</h1>
+        <p>The 2024 measurement tells us what happened during that growing season. The 30-year normal gives us a climate reference for what is typical.</p>
       </div>
 
-      <div class="comparison-board">
-        <section class="comparison-card weather-card">
+      <div class="single-metric-board">
+        <section class="metric-compare weather-card">
           <p class="tiny-label">2024 WEATHER</p>
-          <h2>One growing season</h2>
-          <div class="metric"><span>Average daily high</span><strong>76.0°F</strong></div>
-          <div class="metric"><span>Total precipitation</span><strong>8.11 in</strong></div>
-          <p>These measurements describe what happened from April through September 2024.</p>
+          <h2>Average daily high</h2>
+          <strong class="big-number">76.0°F</strong>
+          <p>April–September 2024</p>
         </section>
-        <div class="versus" aria-hidden="true">+</div>
-        <section class="comparison-card climate-card">
-          <p class="tiny-label">CLIMATE</p>
-          <h2>30-year normal</h2>
-          <div class="metric"><span>Average daily high</span><strong>74.9°F</strong></div>
-          <div class="metric"><span>Total precipitation</span><strong>8.90 in</strong></div>
-          <p>These 1991–2020 normals describe what is typical over many years.</p>
+        <div class="compare-mark" aria-hidden="true">vs.</div>
+        <section class="metric-compare climate-card">
+          <p class="tiny-label">CLIMATE NORMAL</p>
+          <h2>Average daily high</h2>
+          <strong class="big-number">74.9°F</strong>
+          <p>1991–2020 normal for April–September</p>
         </section>
       </div>
 
       <section class="question-card" aria-labelledby="q2-heading">
-        <span class="stamp">Your turn</span>
-        <h2 id="q2-heading">What does the climate information help us understand?</h2>
+        <span class="stamp">Compare the numbers</span>
+        <h2 id="q2-heading">How did temperature during the 2024 growing season compare with the climate normal?</h2>
         <div class="answer-stack" data-question="q2">
-          <button type="button" class="answer" data-correct="true">Whether the weather in 2024 was warmer, cooler, wetter, or drier than what is typical.</button>
-          <button type="button" class="answer" data-correct="false">Exactly what the weather will be next growing season.</button>
-          <button type="button" class="answer" data-correct="false">How garden plants responded to the 2024 weather.</button>
+          <button type="button" class="answer" data-correct="true">Warmer than usual</button>
+          <button type="button" class="answer" data-correct="false">Cooler than usual</button>
+          <button type="button" class="answer" data-correct="false">About the same</button>
         </div>
         <div class="feedback" id="q2-feedback" aria-live="polite"></div>
       </section>
     </div>
   </section>
 
-  <section class="screen" data-screen="3" aria-labelledby="context-heading">
+  <section class="screen" data-screen="3" aria-labelledby="precip-heading">
     <div class="wide-page">
       <div class="page-heading">
-        <p class="eyebrow">Step 3 · Put weather in context</p>
-        <h1 id="context-heading">What do we learn by comparing them?</h1>
-        <p>Now the numbers can tell us more than what happened. They can tell us how 2024 compared with the long-term pattern.</p>
+        <p class="eyebrow">Step 3 · Try precipitation</p>
+        <h1 id="precip-heading">Was 2024 wetter or drier than usual?</h1>
+        <p>Now use the same weather-versus-climate comparison with precipitation.</p>
       </div>
 
-      <div class="snapshot-card">
-        <div class="snapshot-title">
-          <span class="tiny-label">CORVALLIS · APRIL–SEPTEMBER</span>
-          <h2>2024 growing season snapshot</h2>
-        </div>
-        <div class="departure-grid">
-          <div class="departure">
-            <span class="departure-icon" aria-hidden="true">↟</span>
-            <span>Temperature</span>
-            <strong>+1.1°F</strong>
-            <small>warmer than normal</small>
-          </div>
-          <div class="departure">
-            <span class="departure-icon" aria-hidden="true">☂</span>
-            <span>Precipitation</span>
-            <strong>−0.79 in</strong>
-            <small>drier than normal</small>
-          </div>
-        </div>
-        <p class="snapshot-note"><strong>Where do these comparisons come from?</strong> The 2024 measurements are compared with the 1991–2020 climate normals for the same April–September period.</p>
+      <div class="single-metric-board">
+        <section class="metric-compare weather-card">
+          <p class="tiny-label">2024 WEATHER</p>
+          <h2>Total precipitation</h2>
+          <strong class="big-number">8.11 in</strong>
+          <p>April–September 2024</p>
+        </section>
+        <div class="compare-mark" aria-hidden="true">vs.</div>
+        <section class="metric-compare climate-card">
+          <p class="tiny-label">CLIMATE NORMAL</p>
+          <h2>Total precipitation</h2>
+          <strong class="big-number">8.90 in</strong>
+          <p>1991–2020 normal for April–September</p>
+        </section>
       </div>
 
       <section class="question-card" aria-labelledby="q3-heading">
-        <span class="stamp">Put it together</span>
-        <h2 id="q3-heading">Which statement best explains the relationship between weather and climate?</h2>
+        <span class="stamp">Compare the numbers</span>
+        <h2 id="q3-heading">How did precipitation during the 2024 growing season compare with the climate normal?</h2>
         <div class="answer-stack" data-question="q3">
-          <button type="button" class="answer" data-correct="false">Weather is daily, while climate is anything measured over a whole season.</button>
-          <button type="button" class="answer" data-correct="true">Weather tells us what happened during a particular period; climate describes longer-term patterns that help us put that weather in context.</button>
-          <button type="button" class="answer" data-correct="false">Weather and climate are two names for the same measurements.</button>
+          <button type="button" class="answer" data-correct="false">Wetter than usual</button>
+          <button type="button" class="answer" data-correct="true">Drier than usual</button>
+          <button type="button" class="answer" data-correct="false">About the same</button>
         </div>
         <div class="feedback" id="q3-feedback" aria-live="polite"></div>
       </section>
     </div>
   </section>
 
-  <section class="screen completion-screen" data-screen="4" aria-labelledby="complete-heading">
+  <section class="screen" data-screen="4" aria-labelledby="context-heading">
+    <div class="wide-page">
+      <div class="page-heading">
+        <p class="eyebrow">Step 4 · Put the evidence together</p>
+        <h1 id="context-heading">What story does the comparison tell?</h1>
+        <p>You’ve compared temperature and precipitation separately. Now bring those two pieces of evidence together.</p>
+      </div>
+
+      <div class="snapshot-card">
+        <div class="snapshot-title">
+          <span class="tiny-label">CORVALLIS · APRIL–SEPTEMBER 2024</span>
+          <h2>Growing season snapshot</h2>
+        </div>
+        <div class="departure-grid">
+          <div class="departure">
+            <span class="departure-icon" aria-hidden="true">↟</span>
+            <span>Temperature</span>
+            <strong>+1.1°F</strong>
+            <small>compared with the climate normal</small>
+          </div>
+          <div class="departure">
+            <span class="departure-icon" aria-hidden="true">☂</span>
+            <span>Precipitation</span>
+            <strong>−0.79 in</strong>
+            <small>compared with the climate normal</small>
+          </div>
+        </div>
+      </div>
+
+      <section class="question-card" aria-labelledby="q4-heading">
+        <span class="stamp">Put it together</span>
+        <h2 id="q4-heading">Compared with what is typical, how would you describe the 2024 growing season?</h2>
+        <div class="answer-stack" data-question="q4">
+          <button type="button" class="answer" data-correct="false">Warmer and wetter than usual</button>
+          <button type="button" class="answer" data-correct="true">Warmer and drier than usual</button>
+          <button type="button" class="answer" data-correct="false">Cooler and wetter than usual</button>
+          <button type="button" class="answer" data-correct="false">Cooler and drier than usual</button>
+        </div>
+        <div class="feedback" id="q4-feedback" aria-live="polite"></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="screen completion-screen" data-screen="5" aria-labelledby="complete-heading">
     <div class="complete-card">
       <div class="complete-doodle" aria-hidden="true">✦</div>
-      <p class="eyebrow">You dug into the difference</p>
-      <h1 id="complete-heading">Same place. Different kinds of information.</h1>
+      <p class="eyebrow">You made the comparison</p>
+      <h1 id="complete-heading">You just used climate to understand weather.</h1>
       <div class="final-pair">
         <div><span class="final-label">WEATHER</span><strong>What happened?</strong><p>In the 2024 growing season, we recorded daily temperature and precipitation.</p></div>
         <div><span class="final-label">CLIMATE</span><strong>What is typical?</strong><p>The 1991–2020 record gives us a long-term pattern for comparison.</p></div>
       </div>
-      <p class="final-takeaway"><strong>Put them together:</strong> 2024 was 1.1°F warmer and received 0.79 inches less precipitation than the long-term normal for the April–September growing season.</p>
-      <p class="bridge-note">One year of weather can be unusual without telling us that the climate itself has changed. To explore climate change, we need to look across many years.</p>
+      <p class="final-takeaway">The 2024 observations told you <strong>what happened</strong>. The 30-year climate normals told you <strong>what is typical</strong>. Comparing them showed that the 2024 growing season was <strong>warmer and drier than usual</strong>.</p>
+      <div class="bridge-note">
+        <strong>Next: Widen the view</strong><br>
+        In this activity, you used a 30-year climate normal to put one year of weather in context.
+        <br><br>
+        <strong>In Module 2, you’ll dig deeper into climate data.</strong> You’ll look across many years to see how climate patterns and trends emerge—and why a single warm, cool, wet, or dry year doesn’t tell the whole story.
+      </div>
       <button class="secondary restart" type="button">Explore again</button>
     </div>
   </section>
@@ -175,7 +215,7 @@
 
 <nav class="bottom-nav" aria-label="Activity navigation">
   <button id="previous" class="nav-button" type="button">← Back</button>
-  <ol class="steps" aria-label="Progress"><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li></ol>
+  <ol class="steps" aria-label="Progress"><li class="active">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li></ol>
   <button id="next" class="nav-button next-button" type="button" disabled>Next →</button>
 </nav>
 

@@ -4,8 +4,8 @@ const screens=[...document.querySelectorAll(".screen")];
 const steps=[...document.querySelectorAll(".steps li")];
 const prev=document.querySelector("#previous"), next=document.querySelector("#next"), stepLabel=document.querySelector("#step-label");
 let current=0;
-const answered={q1:false,q2:false,q3:false};
-const labels=["Start here","Weather","Climate","Compare","Takeaway"];
+const answered={q1:false,q2:false,q3:false,q4:false};
+const labels=["Start here","Weather","Temperature","Precipitation","Put it together","Takeaway"];
 
 function show(i){
   current=Math.max(0,Math.min(i,screens.length-1));
@@ -22,6 +22,7 @@ function updateNext(){
   if(current===1){next.disabled=!answered.q1}
   else if(current===2){next.disabled=!answered.q2}
   else if(current===3){next.disabled=!answered.q3}
+  else if(current===4){next.disabled=!answered.q4}
   else {next.disabled=true}
   next.textContent=current===screens.length-2?"Finish →":"Next →";
 }
@@ -75,13 +76,15 @@ document.querySelectorAll(".answer-stack").forEach(group=>{
     if(correct){
       answered[q]=true; feedback.className="feedback good";
       if(q==="q1") feedback.innerHTML="<strong>Yes.</strong> Even though the graph covers six months, it is still weather because it shows conditions from one particular year.";
-      if(q==="q2") feedback.innerHTML="<strong>Exactly.</strong> Climate gives the 2024 weather a reference point: what is typical over many years.";
-      if(q==="q3") feedback.innerHTML="<strong>That’s the key idea.</strong> Weather and climate can use the same kinds of measurements, but they describe different time perspectives.";
+      if(q==="q2") feedback.innerHTML="<strong>Yes.</strong> 76.0°F is 1.1°F higher than the 74.9°F climate normal, so the 2024 growing season was warmer than usual.";
+      if(q==="q3") feedback.innerHTML="<strong>Yes.</strong> 8.11 inches is 0.79 inches less than the 8.90-inch climate normal, so the 2024 growing season was drier than usual.";
+      if(q==="q4") feedback.innerHTML="<strong>Exactly.</strong> You used the climate normal to put the 2024 weather in context: the growing season was warmer and drier than usual.";
     }else{
       feedback.className="feedback try";
       if(q==="q1") feedback.textContent="Try again. Think about whether this record describes one particular year or a pattern across many years.";
-      if(q==="q2") feedback.textContent="Try again. The long-term normal is useful because it gives us a reference for what is typical.";
-      if(q==="q3") feedback.textContent="Try again. The difference is not the type of measurement or simply whether the period is a day or a season.";
+      if(q==="q2") feedback.textContent="Try again. Compare 76.0°F with 74.9°F.";
+      if(q==="q3") feedback.textContent="Try again. Compare 8.11 inches with 8.90 inches.";
+      if(q==="q4") feedback.textContent="Try again. Use both comparisons: was 2024 warmer or cooler, and wetter or drier?";
     }
     updateNext();
   }))
